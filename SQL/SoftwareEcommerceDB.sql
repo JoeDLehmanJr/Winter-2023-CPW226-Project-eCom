@@ -9,7 +9,7 @@ GO
 CREATE DATABASE CPW221_Project_eCom;
 GO
 
-USE CPW221_Project_eCom;
+USE CPW221_Project_eCom; 
 GO
 
 
