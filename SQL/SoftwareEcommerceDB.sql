@@ -1,18 +1,18 @@
 USE master;
 -- Delete existing Database if exists and needs removal.
-DROP DATABASE IF EXISTS ECommerce;
+DROP DATABASE IF EXISTS CPW221_Project_eCom;
 GO
 --------------------------------------------------------
 
--- Initialize Carshop Database
+-- Initialize ECommerce Database
 
-CREATE DATABASE ECommerce;
+CREATE DATABASE CPW221_Project_eCom;
 GO
 
-USE ECommerce;
+USE CPW221_Project_eCom; 
 GO
 
--- Create Table AutoShop
+
 
 CREATE TABLE CustomerLogin
 (
