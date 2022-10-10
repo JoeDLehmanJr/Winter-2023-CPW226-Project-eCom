@@ -9,6 +9,7 @@ namespace CPW221_Project_eCom.Models
     {
         /// <summary>
         /// Unique primary key for Invoices
+        ///  NOT NULL
         /// </summary>
         public int OrderNumber { get; set; }
 
@@ -17,9 +18,14 @@ namespace CPW221_Project_eCom.Models
         /// the date the order was made
         /// needs construction of way to handle datetime data
         /// convert to string?
+        ///  NOT NULL
         /// </summary>
         public DateTime OrderDate { get; set; }
 
+        /// <summary>
+        /// The description for the status of the order
+        ///  NOT NULL
+        /// </summary>
         public string Status { get; set; }
 
         //PLACEHOLDER
@@ -32,6 +38,7 @@ namespace CPW221_Project_eCom.Models
 
         /// <summary>
         /// Id of the customer assigned to product. Foreign Key. Connects to Customer
+        ///  NOT NULL
         /// </summary>
         public int CustomerId { get; set; }
 
