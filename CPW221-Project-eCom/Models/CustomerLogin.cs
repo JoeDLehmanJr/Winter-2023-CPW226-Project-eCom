@@ -12,7 +12,7 @@ namespace CPW221_Project_eCom.Models
         /// NOT NULL
         /// WARNING: Two cases of CustomerId in DB. CustomerId in CustomerLogin will be primary
         /// </summary>
-        public int CustomerId { get; set; }
+        public int CustomerLoginId { get; set; }
 
         /// <summary>
         /// User name of the customer account
