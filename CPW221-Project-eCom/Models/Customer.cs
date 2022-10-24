@@ -74,13 +74,13 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// Determines whether email is confirmed and sends a boolean value
         /// </summary>
-        public boolean IsEmailConfirmed;
+        public bool IsEmailConfirmed;
 
         //PLACEHOLDER
         /// <summary>
         /// Determines whether customer is subscribed and sends a boolean value
         /// </summary>
-        public boolean IsSubscribed;
+        public bool IsSubscribed;
 
     }
 }
