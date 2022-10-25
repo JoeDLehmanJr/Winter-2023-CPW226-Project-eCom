@@ -1,4 +1,5 @@
 
+using System.ComponentModel.DataAnnotations;
 
 namespace CPW221_Project_eCom.Models
 {   
@@ -25,5 +26,15 @@ namespace CPW221_Project_eCom.Models
         /// Will need to ensure privacy of the password
         /// </summary>
         public string Password { get; set; }
+    }
+    public class LoginViewModel
+    {
+        [Required]
+        [EmailAddress]
+        public string UserName { get; set; } = null!;
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = null!;
     }
 }
