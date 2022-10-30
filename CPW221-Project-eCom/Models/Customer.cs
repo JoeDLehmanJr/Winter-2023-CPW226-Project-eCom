@@ -31,7 +31,10 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         public string FullName
         {
-            return FullName = FirstName + " " + LastName;
+            get
+            {
+                return FirstName + " " + LastName;
+            }
         }
 
         /// <summary>
