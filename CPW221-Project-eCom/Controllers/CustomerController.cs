@@ -16,6 +16,7 @@ namespace CPW221_Project_eCom.Controllers
         public IActionResult Index()
         {
             return View();
+
         }
 
         [HttpGet]
@@ -26,6 +27,33 @@ namespace CPW221_Project_eCom.Controllers
 
         [HttpPost]
 
+        public async Task<IActionResult> Register(LoginViewModel loginModel)
+        {
+            if (ModelState.IsValid)
+            {
+                // Assign LoginViewModel Data to new customerLogin
+
+                CustomerLogin newCustomer = new()
+                {
+                    UserName = loginModel.UserName,
+                    Password = loginModel.Password
+                };
+
+
+                _context.CustomerLogin.Add(newCustomer);
+                await _context.SaveChangesAsync();
+
+                LogUserIn(newCustomer.UserName);
+
+                // Redirect to homepage
+                return RedirectToAction("Index");
+
+
+            }
+
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -33,7 +61,7 @@ namespace CPW221_Project_eCom.Controllers
         }
 
         [HttpPost]
-        /*public IActionResult Login(LoginViewModel loginModel)
+        public IActionResult Login(LoginViewModel loginModel)
         {
             if (ModelState.IsValid)
             {
@@ -50,7 +78,8 @@ namespace CPW221_Project_eCom.Controllers
             }
 
             return View(loginModel);
-        }*/
+        }
+
 
         
 

@@ -82,5 +82,7 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         public boolean IsSubscribed;
 
+
+
     }
 }
