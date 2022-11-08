@@ -43,7 +43,7 @@ namespace CPW221_Project_eCom.Controllers
             return View(invoicedItems);
         }
 
-        public async Task Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             InvoicedItems invoicedItemsToDelete = await _context.InvoicedItems.FindAsync(id);
 
