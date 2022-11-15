@@ -33,5 +33,10 @@ namespace CPW221_Project_eCom.Models
         [DataType(DataType.Password)]
         [Required]
         public string Password { get; set; }
+
+        /// <summary>
+        /// A collection of Customers from the Customer class
+        /// </summary>
+        public ICollection<Customer> Customers { get; set; }
     }
 }
