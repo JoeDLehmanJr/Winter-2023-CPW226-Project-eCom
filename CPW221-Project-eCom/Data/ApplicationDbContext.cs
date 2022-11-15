@@ -17,5 +17,7 @@ namespace CPW221_Project_eCom.Data
         public DbSet<InvoicedItems> InvoicedItems { get; set; }
 
         public DbSet<Product> Product { get; set; }
+
+        public DbSet<Invoices> Invoices { get; set; }
     }
 }

@@ -15,7 +15,6 @@ namespace CPW221_Project_eCom.Controllers
 
         public IActionResult Index()
         {
-            /* Will need to figure out parameters of view for week of OCT 17 - 24*/
             return View();
         }
 
