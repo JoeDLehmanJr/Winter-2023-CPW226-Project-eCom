@@ -18,7 +18,7 @@ namespace CPW221_Project_eCom.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpGet]   
         public async Task<IActionResult> Create()
         {
             return View();
