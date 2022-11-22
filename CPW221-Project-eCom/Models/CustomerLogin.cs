@@ -35,8 +35,13 @@ namespace CPW221_Project_eCom.Models
         public string Password { get; set; }
 
         /// <summary>
-        /// A collection of Customers from the Customer class
+        /// pointer to the CustomerID
         /// </summary>
-        public ICollection<Customer> Customers { get; set; }
+        public int CustomerId { get; set; }
+
+        /// <summary>
+        /// makes the customer class into a object
+        /// </summary>
+        public Customer _Customer { get; set; }
     }
 }
