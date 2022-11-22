@@ -114,6 +114,5 @@ namespace CPW221_Project_eCom.Models
         /// makes the customerLogin class into a object
         /// </summary>
         public CustomerLogin CustomerLogin { get; set; }
- master
     }
 }
