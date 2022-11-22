@@ -105,13 +105,8 @@ namespace CPW221_Project_eCom.Models
         public bool IsSubscribed;
 
         /// <summary>
-        /// pointer to the CustomerLoginID
+        /// A collection of Customers from the Customer class
         /// </summary>
-        public int CustomerLoginId { get; set; }
-
-        /// <summary>
-        /// makes the customerLogin class into a object
-        /// </summary>
-        public CustomerLogin CustomerLogin { get; set; }
+        public ICollection<CustomerLogin> _CustomersLogin { get; set; }
     }
 }
