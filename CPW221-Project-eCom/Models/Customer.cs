@@ -118,5 +118,11 @@ namespace CPW221_Project_eCom.Models
 
         public ICollection<CustomerLogin> _CustomersLogin { get; set; }
 
+
+        public int invoicesCustomerId { get; set; }
+
+        public Invoices _invoices { get; set; }
+
+
     }
 }
