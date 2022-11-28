@@ -108,5 +108,10 @@ namespace CPW221_Project_eCom.Models
         /// A collection of Customers from the Customer class
         /// </summary>
         public ICollection<CustomerLogin> _CustomersLogin { get; set; }
+
+        public int invoicesCustomerId { get; set; }
+
+        public Invoices _invoices { get; set; }
+
     }
 }
