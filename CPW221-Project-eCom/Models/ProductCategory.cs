@@ -24,3 +24,5 @@ namespace CPW221_Project_eCom.Models
         ///  NOT NULL
         /// </summary>
         public string ProductCategoryDescription { get; set; }
+    }
+}

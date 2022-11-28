@@ -14,6 +14,9 @@ Site will provide a place for our customers to order products from the convinien
 ### Developers
 
  - Requires VisualStudio2022
+ 
+   - Microsoft.AspNetCore.Identity.EntityFrameworkCore
+   - Microsoft.AspNetCore.Identity.UI
    - ASP.NET MVC *(https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-6.0&tabs=visual-studio)*
    - Microsoft.EntityFrameWorkCore.SqlServer *(https://docs.microsoft.com/en-us/ef/core/providers/sql-server/?tabs=dotnet-core-cli)*
    - Microsoft.AspNetCore.Diagnostics.EntityFrameWorkCore *(https://docs.microsoft.com/en-us/dotnet/api/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore?view=aspnetcore-6.0)*

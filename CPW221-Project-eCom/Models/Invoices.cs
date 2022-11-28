@@ -46,6 +46,6 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// Determines if the order was made online or by other means and returns boolean value
         /// </summary>
-        public boolean isOnlineOrder;
+        public bool isOnlineOrder;
     }
 }
