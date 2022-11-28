@@ -40,7 +40,7 @@ namespace CPW221_Project_eCom.Models
         public int CustomerId { get; set; }
 
         /// <summary>
-        /// makes the customer class into a object
+        /// makes the customer class into an object
         /// </summary>
         public Customer _Customer { get; set; }
     }
