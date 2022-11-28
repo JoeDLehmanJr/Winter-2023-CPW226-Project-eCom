@@ -66,10 +66,10 @@ namespace CPW221_Project_eCom.Controllers
             if (ModelState.IsValid)
             {
                 // Get data from Models/Customer.cs
-                CustomerLogin? c = (from CustomerLogin in _context.CustomerLogin
-                              where CustomerLogin.UserName = loginModel.UserName &&
-                              CustomerLogin.Password = loginModel.Password
-                              select CustomerLogin);
+                CustomerLogin? c = ( from CustomerLogin in _context.CustomerLogin
+                              where CustomerLogin.UserName == loginModel.UserName &&
+                              CustomerLogin.Password == loginModel.Password
+                              select CustomerLogin).SingleOrDefault();
 
                 if (c != null)
                 {
