@@ -48,11 +48,6 @@ namespace CPW221_Project_eCom.Models
         /// collection of customers
         /// </summary>
         public Customer _customer { get; set; }
-
-        /// makes the customer class into an object
-        /// </summary>
-        public Customer _Customer { get; set; }
-
     }
     public class LoginViewModel
     {
