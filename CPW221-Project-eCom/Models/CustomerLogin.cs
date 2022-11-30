@@ -35,16 +35,11 @@ namespace CPW221_Project_eCom.Models
         public string Password { get; set; }
 
         /// <summary>
-
-        /// pointer to link the customer table to this
-
-        /// pointer to the CustomerID
-
+        /// pointer to link the customer table to this one
         /// </summary>
         public int CustomerId { get; set; }
 
         /// <summary>
-
         /// collection of customers
         /// </summary>
         public Customer _customer { get; set; }
