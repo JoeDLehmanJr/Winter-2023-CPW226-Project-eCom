@@ -44,7 +44,7 @@ namespace CPW221_Project_eCom.Controllers
                 _context.Product.Update(product);
                 await _context.SaveChangesAsync();
 
-                TempData["Message"] = $"{product.ProductId} was updated successfully";
+                TempData["Message"] = $"{product.ProductCategoryId} was updated successfully";
                 return RedirectToAction("Index");
             }
             return View(product);
@@ -70,7 +70,7 @@ namespace CPW221_Project_eCom.Controllers
             {
                 _context.Product.Remove(productToDelete);
                 await _context.SaveChangesAsync();
-                TempData["Message"] = productToDelete.ProductId + " was deleted successfully";
+                TempData["Message"] = productToDelete.ProductCategoryId + " was deleted successfully";
                 return RedirectToAction("Index");
             }
 
