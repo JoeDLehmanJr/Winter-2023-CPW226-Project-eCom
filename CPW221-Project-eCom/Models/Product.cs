@@ -1,4 +1,4 @@
-
+using System.ComponentModel.DataAnnotations;
 
 namespace CPW221_Project_eCom.Models
 {
@@ -11,18 +11,24 @@ namespace CPW221_Project_eCom.Models
         /// Unique Primary Key for a product       
         /// NOT NULL
         /// </summary>
-        public int ProductId { get; set; }
+        [Key]
+        public int ProductIdProduct { get; set; }
 
         /// <summary>
         /// MSRP for the product
         ///  NOT NULL
         /// </summary>
+        [Required]
+        [DataType(DataType.Currency)]
         public double RetailPrice { get; set; }
 
         /// <summary>
         /// Description of the product
         ///  NOT NULL
         /// </summary>
+        [Required]
+        [StringLength(255,
+            ErrorMessage = "Description has a limit of 255 characters")]
         public string ProductDescription { get; set; }
 
         /// <summary>
@@ -30,5 +36,15 @@ namespace CPW221_Project_eCom.Models
         ///  NOT NULL
         /// </summary>
         public int ProductCategoryId { get; set; }
+
+        /// <summary>
+        /// collection of productCategory
+        /// </summary>
+        public ProductCategory _productCategory { get; set; }
+
+        /// <summary>
+        /// makes the InvoicedItems class into a object
+        /// </summary>
+        public ICollection<InvoicedItems> _invoicedItems { get; set; }
     }
 }
