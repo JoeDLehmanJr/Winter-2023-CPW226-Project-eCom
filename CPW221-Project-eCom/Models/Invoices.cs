@@ -13,6 +13,7 @@ namespace CPW221_Project_eCom.Models
         /// Unique primary key for Invoices
         ///  NOT NULL
         /// </summary>
+        [Key]
         public int OrderNumber { get; set; }
 
         //PLACEHOLDER
