@@ -1,5 +1,7 @@
 
 
+using System.ComponentModel.DataAnnotations;
+
 namespace CPW221_Project_eCom.Models
 {
     /// <summary>
@@ -11,6 +13,7 @@ namespace CPW221_Project_eCom.Models
         /// The Primary Identity Key for each Invoiced Item
         ///  NOT NULL
         /// </summary>
+        [Key]
         public int ProductId { get; set; }
 
         /// <summary>
