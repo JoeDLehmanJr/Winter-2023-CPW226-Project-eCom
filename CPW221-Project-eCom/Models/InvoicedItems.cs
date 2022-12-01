@@ -1,5 +1,7 @@
 
 
+using System.ComponentModel.DataAnnotations;
+
 namespace CPW221_Project_eCom.Models
 {
     /// <summary>
@@ -11,6 +13,7 @@ namespace CPW221_Project_eCom.Models
         /// The Primary Identity Key for each Invoiced Item
         ///  NOT NULL
         /// </summary>
+        [Key]
         public int ProductId { get; set; }
 
         /// <summary>
@@ -24,5 +27,20 @@ namespace CPW221_Project_eCom.Models
         ///  NOT NULL
         /// </summary>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// makes the customerLogin class into a object
+        /// </summary>
+        public ICollection<Invoices> _invoices { get; set; }
+
+        /// <summary>
+        /// pointer to link the Product table to this one
+        /// </summary>
+        public int ProductIdProduct { get; set; }
+
+        /// <summary>
+        /// collection of product
+        /// </summary>
+        public Product _product { get; set; }
     }
 }
