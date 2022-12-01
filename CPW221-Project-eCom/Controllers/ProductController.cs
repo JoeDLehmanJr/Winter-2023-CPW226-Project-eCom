@@ -43,7 +43,6 @@ namespace CPW221_Project_eCom.Controllers
             {
                 _context.Product.Update(product);
                 await _context.SaveChangesAsync();
-
                 TempData["Message"] = $"{product.ProductIdProduct} was updated successfully";
                 return RedirectToAction("Index");
             }
