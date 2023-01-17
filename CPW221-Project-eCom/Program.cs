@@ -2,9 +2,9 @@ using CPW221_Project_eCom.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Azure.Identity;
+using Azure.Core.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
-
 var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri"));
 builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
 
