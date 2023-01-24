@@ -19,8 +19,8 @@ namespace CPW221_Project_eCom.Models
         public async Task SendEmailAsync(string toEmail, string fromEmail, string subject,
             string content, string htmlContent)
         {
-            IConfiguration apiKey = _config.GetSection("SENDGRID_KEY");
-            SendGridClient client = new SendGridClient((SendGridClientOptions)apiKey);
+            var apiKey = _config.GetSection("SENDGRID_KEY").Value;
+            var client = new SendGridClient(apiKey);
             
             SendGridMessage msg = new SendGridMessage()
             {
