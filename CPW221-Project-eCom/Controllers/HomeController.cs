@@ -4,17 +4,21 @@ using System.Diagnostics;
 
 namespace CPW221_Project_eCom.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IEmailProvider _emailProvider;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IEmailProvider emailProvider = null)
         {
             _logger = logger;
+            _emailProvider = emailProvider;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            await _emailProvider.SendEmailAsync(null, null, "This is a test of SendGrid functionality", "This is a test of SendGrid functionality", ",strong>This is a test of SendGrid functionality</strong>");
             return View();
         }
 

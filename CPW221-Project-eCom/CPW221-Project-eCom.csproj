@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CPW221_Project_eCom-2C866225-12C7-45D4-BBDF-0792EF83D7B3</UserSecretsId>
     <RootNamespace>CPW221_Project_eCom</RootNamespace>
