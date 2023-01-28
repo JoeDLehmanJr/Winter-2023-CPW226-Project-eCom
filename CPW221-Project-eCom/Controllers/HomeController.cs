@@ -18,7 +18,7 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await _emailProvider.SendEmailAsync(null, null, "This is a test of SendGrid functionality", "This is a test of SendGrid functionality", ",strong>This is a test of SendGrid functionality</strong>");
+            await _emailProvider.SendEmailAsync("joejr@j-d-c.biz", "lehman5247@students.cptc.edu", "This is a test of SendGrid functionality", "This is a test of SendGrid functionality", "<strong>This is a test of SendGrid functionality</strong>");
             return View();
         }
 
