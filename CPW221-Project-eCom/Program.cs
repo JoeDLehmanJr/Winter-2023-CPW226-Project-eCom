@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Azure.Identity;
 
 using Azure.Core.Diagnostics;
+using CPW221_Project_eCom.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri"));
