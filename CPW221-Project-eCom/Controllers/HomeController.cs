@@ -8,20 +8,15 @@ namespace CPW221_Project_eCom.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IEmailProvider _emailProvider;
+        private readonly IEmailProvider? _emailProvider;
 
-        public HomeController(ILogger<HomeController> logger, IEmailProvider emailProvider = null)
+        public HomeController(ILogger<HomeController> logger, IEmailProvider? emailProvider = null)
         {
             _logger = logger;
             _emailProvider = emailProvider;
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
