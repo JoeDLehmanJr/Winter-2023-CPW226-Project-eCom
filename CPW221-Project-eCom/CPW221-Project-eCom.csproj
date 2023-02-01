@@ -6,11 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CPW221_Project_eCom-2C866225-12C7-45D4-BBDF-0792EF83D7B3</UserSecretsId>
     <RootNamespace>CPW221_Project_eCom</RootNamespace>
+    <ApplicationInsightsResourceId>/subscriptions/55f3a7a2-3868-4dc6-8ee1-4e3295178bea/resourceGroups/joessoftwarestore_group/providers/microsoft.insights/components/joessoftwarestore</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.0.0" />
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.9" />
