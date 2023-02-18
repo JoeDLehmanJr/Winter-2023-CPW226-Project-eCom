@@ -42,24 +42,36 @@ namespace CPW221_Project_eCom.Controllers
         
 
         [HttpGet]   
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
 
+
         [HttpPost]
+        public async Task<IActionResult> Create(Product product)
+        {
+
+            if (ModelState.IsValid)
+            {
+                _context.Product.Add(product);
+                await _context.SaveChangesAsync();
+                TempData["Message"] = $"{product.ProductDescription} was added successfully";
+                return View();
+            }
+            return View(product);
+
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             Product? productToEdit = await _context.Product.FindAsync(id);
-
             if (productToEdit == null)
             {
                 return NotFound();
             }
-
             return View(productToEdit);
         }
-
+        [HttpPost]
         public async Task<IActionResult> Edit(Product product)
         {
             if (ModelState.IsValid)
