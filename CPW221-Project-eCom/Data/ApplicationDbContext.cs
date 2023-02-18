@@ -12,11 +12,13 @@ namespace CPW221_Project_eCom.Data
 
         }
 
+        public DbSet<Customer> Customer { get; set; }
         public DbSet<CustomerLogin> CustomerLogin { get; set; }
         
         public DbSet<InvoicedItems> InvoicedItems { get; set; }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<ProductCategory> ProductCategory { get; set; }
 
         public DbSet<Invoices> Invoices { get; set; }
     }
