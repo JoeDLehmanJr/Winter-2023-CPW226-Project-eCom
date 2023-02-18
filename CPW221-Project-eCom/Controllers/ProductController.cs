@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CPW221_Project_eCom.Models;
 using CPW221_Project_eCom.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CPW221_Project_eCom.Controllers
 {
@@ -12,11 +13,33 @@ namespace CPW221_Project_eCom.Controllers
             
             _context = context;
         }
+        
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            return View();
+            const int NUMBEROFSOFTWARETODISPLAY = 10;
+
+            // Need a page offset to use current page and figure out, number of software programs to skip
+            const int PageOffset = 1;
+
+            // Set currPage to id if it has a value, otherwise use 1
+            int currPage = id ?? 1;
+
+            int totalNumberOfProducts = await _context.Product.CountAsync();
+            double MaxNumberOfPages = Math.Ceiling((double)totalNumberOfProducts / NUMBEROFSOFTWARETODISPLAY);
+
+            // Rounding pages up, to next whole page number
+            int lastPage = Convert.ToInt32(MaxNumberOfPages);
+
+            //Get all Products from the DB (Query Syntax)
+            List<Product> products = await(from product in _context.Product select product)
+                .Skip(NUMBEROFSOFTWARETODISPLAY * (currPage - PageOffset))
+                .Take(NUMBEROFSOFTWARETODISPLAY)
+                .ToListAsync();
+            
+            return View(products);
         }
+        
 
         [HttpGet]   
         public async Task<IActionResult> Create()
