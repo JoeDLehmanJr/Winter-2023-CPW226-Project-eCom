@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace CPW221_Project_eCom.Models
 {
     /// <summary>
-    /// Category for product when searching for revelvant items related to a search
+    /// Category for product when searching for relevant items related to a search
     /// </summary>
 	public class ProductCategory
     {
