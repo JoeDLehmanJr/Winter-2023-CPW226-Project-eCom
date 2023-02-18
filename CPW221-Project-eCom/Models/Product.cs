@@ -15,6 +15,14 @@ namespace CPW221_Project_eCom.Models
         public int ProductIdProduct { get; set; }
 
         /// <summary>
+        /// Title of the product
+        /// </summary>
+        [Required]
+        [StringLength(60,
+            ErrorMessage = "Title has a limit of 60 characters")]
+        public string Title { get; set; }
+
+        /// <summary>
         /// MSRP for the product
         ///  NOT NULL
         /// </summary>
