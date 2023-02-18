@@ -60,6 +60,7 @@ namespace CPW221_Project_eCom.Controllers
                 return View();
             }
             return View(product);
+        }
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
