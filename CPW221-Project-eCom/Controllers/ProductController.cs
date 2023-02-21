@@ -56,7 +56,7 @@ namespace CPW221_Project_eCom.Controllers
             {
                 _context.Product.Add(product);
                 await _context.SaveChangesAsync();
-                TempData["Message"] = $"{product.ProductDescription} was added successfully";
+                TempData["Message"] = $"{product.Title} was added successfully";
                 return View();
             }
             return View(product);
