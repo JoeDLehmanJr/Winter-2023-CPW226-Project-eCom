@@ -24,7 +24,7 @@ namespace CPW221_Project_eCom.Models
         [StringLength(25, MinimumLength = 6,
             ErrorMessage = "First name must have min length of 6 and max Length of 25")]
         [Required]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         /// <summary>
         /// LastName of User
@@ -33,7 +33,7 @@ namespace CPW221_Project_eCom.Models
         [StringLength(25, MinimumLength = 6,
             ErrorMessage = "Last name must have min length of 6 and max Length of 25")]
         [Required]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         /// <summary>
         /// Combines FirstName and LastName into full name if needed
@@ -52,7 +52,7 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         [StringLength(50,
             ErrorMessage = "Address must have a max Length of 50")]
-        public string Address1 { get; set; }
+        public string? Address1 { get; set; }
 
         /// <summary>
         /// Secondary Address of customer
@@ -60,7 +60,7 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         [StringLength(50,
             ErrorMessage = "Address must have a max Length of 50")]
-        public string Address2 { get; set; }
+        public string? Address2 { get; set; }
 
         /// <summary>
         /// City of the customer
@@ -68,7 +68,7 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         [StringLength(58,
             ErrorMessage = "City name must have a max Length of 58")]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         /// <summary>
         /// State of the customer
@@ -76,14 +76,14 @@ namespace CPW221_Project_eCom.Models
         /// </summary>
         [StringLength(14,
             ErrorMessage = "The state must have a max Length of 14")]
-        public string State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// Zip Code of the user
         /// CAN BE NULL
         /// </summary>
         [DataType(DataType.PostalCode)]
-        public string ZipCode { get; set; }
+        public string? ZipCode { get; set; }
 
         /// <summary>
         /// Email of the user
@@ -92,7 +92,7 @@ namespace CPW221_Project_eCom.Models
         [DataType(DataType.EmailAddress)]
         [StringLength(255,
             ErrorMessage = "Email addresses are composed by taking a username plus an at symbol plus a domain name including a TLD. this whole string can not exceed 255 characters. ")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// Determines whether email is confirmed and sends a boolean value
@@ -107,7 +107,7 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// makes the customerLogin class into a object
         /// </summary>
-        public ICollection<CustomerLogin> _CustomersLogin { get; set; }
+        public ICollection<CustomerLogin>? _CustomersLogin { get; set; }
 
         /// <summary>
         /// pointer to link the invoices table to this one
@@ -117,6 +117,6 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// collection of invoices
         /// </summary>
-        public Invoices _invoices { get; set; }
+        public Invoices? _invoices { get; set; }
     }
 }

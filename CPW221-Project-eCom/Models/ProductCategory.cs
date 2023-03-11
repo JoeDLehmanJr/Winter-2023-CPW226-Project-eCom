@@ -23,16 +23,7 @@ namespace CPW221_Project_eCom.Models
         [Required]
         [StringLength(75,
             ErrorMessage = "Category Name has a limit of 75 characters")]
-        public string ProductCategoryName { get; set; }
-
-        /// <summary>
-        /// Description of the product category
-        ///  NOT NULL
-        /// </summary>
-        [Required]
-        [StringLength(255,
-            ErrorMessage = "Description has a limit of 255 characters")]
-        public string ProductCategoryDescription { get; set; }
+        public string? ProductCategoryName { get; set; }
 
         /// <summary>
         /// makes the customerLogin class into a object

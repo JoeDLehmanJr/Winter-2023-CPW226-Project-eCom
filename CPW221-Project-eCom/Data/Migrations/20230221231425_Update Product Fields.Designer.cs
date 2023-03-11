@@ -4,6 +4,7 @@ using CPW221_Project_eCom.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CPW221_Project_eCom.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230221231425_Update Product Fields")]
+    partial class UpdateProductFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,18 +33,22 @@ namespace CPW221_Project_eCom.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1L, 1);
 
                     b.Property<string>("Address1")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Address2")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasMaxLength(58)
                         .HasColumnType("nvarchar(58)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
@@ -57,13 +63,15 @@ namespace CPW221_Project_eCom.Data.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("State")
+                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
                     b.Property<string>("ZipCode")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("_invoicesOrderNumber")
+                    b.Property<int>("_invoicesOrderNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("invoicesCustomerId")
@@ -121,15 +129,10 @@ namespace CPW221_Project_eCom.Data.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int?>("_invoicesOrderNumber")
-                        .HasColumnType("int");
-
                     b.Property<int>("_productProductIdProduct")
                         .HasColumnType("int");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("_invoicesOrderNumber");
 
                     b.HasIndex("_productProductIdProduct");
 
@@ -154,12 +157,18 @@ namespace CPW221_Project_eCom.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("_InvoicedItemsProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("invoicesCustomerId")
                         .HasColumnType("int");
 
                     b.HasKey("OrderNumber");
+
+                    b.HasIndex("_InvoicedItemsProductId");
 
                     b.ToTable("Invoices");
                 });
@@ -202,6 +211,11 @@ namespace CPW221_Project_eCom.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductCategoryId"), 1L, 1);
+
+                    b.Property<string>("ProductCategoryDescription")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("ProductCategoryName")
                         .IsRequired()
@@ -419,7 +433,9 @@ namespace CPW221_Project_eCom.Data.Migrations
                 {
                     b.HasOne("CPW221_Project_eCom.Models.Invoices", "_invoices")
                         .WithMany("_Customer")
-                        .HasForeignKey("_invoicesOrderNumber");
+                        .HasForeignKey("_invoicesOrderNumber")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("_invoices");
                 });
@@ -437,19 +453,24 @@ namespace CPW221_Project_eCom.Data.Migrations
 
             modelBuilder.Entity("CPW221_Project_eCom.Models.InvoicedItems", b =>
                 {
-                    b.HasOne("CPW221_Project_eCom.Models.Invoices", "_invoices")
-                        .WithMany("_InvoicedItems")
-                        .HasForeignKey("_invoicesOrderNumber");
-
                     b.HasOne("CPW221_Project_eCom.Models.Product", "_product")
                         .WithMany("_invoicedItems")
                         .HasForeignKey("_productProductIdProduct")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("_invoices");
-
                     b.Navigation("_product");
+                });
+
+            modelBuilder.Entity("CPW221_Project_eCom.Models.Invoices", b =>
+                {
+                    b.HasOne("CPW221_Project_eCom.Models.InvoicedItems", "_InvoicedItems")
+                        .WithMany("_invoices")
+                        .HasForeignKey("_InvoicedItemsProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("_InvoicedItems");
                 });
 
             modelBuilder.Entity("CPW221_Project_eCom.Models.Product", b =>
@@ -519,11 +540,14 @@ namespace CPW221_Project_eCom.Data.Migrations
                     b.Navigation("_CustomersLogin");
                 });
 
+            modelBuilder.Entity("CPW221_Project_eCom.Models.InvoicedItems", b =>
+                {
+                    b.Navigation("_invoices");
+                });
+
             modelBuilder.Entity("CPW221_Project_eCom.Models.Invoices", b =>
                 {
                     b.Navigation("_Customer");
-
-                    b.Navigation("_InvoicedItems");
                 });
 
             modelBuilder.Entity("CPW221_Project_eCom.Models.Product", b =>

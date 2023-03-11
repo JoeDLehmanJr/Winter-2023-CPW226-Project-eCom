@@ -21,28 +21,42 @@ else
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="ProductIdProduct" class="control-label"></label>
-                    <input asp-for="ProductIdProduct" class="form-control" />
-                    <span asp-validation-for="ProductIdProduct" class="text-danger"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
                     <input asp-for="Title" class="form-control" />
                     <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="RetailPrice" class="control-label"></label>
+                    <label asp-for="RetailPrice" class="control-label">Retail Price</label>
                     <input asp-for="RetailPrice" class="form-control" />
                     <span asp-validation-for="RetailPrice" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProductDescription" class="control-label"></label>
-                    <input asp-for="ProductDescription" class="form-control" />
+                    <label asp-for="ProductDescription" class="control-label">Product Description</label>
+                    <textarea asp-for="ProductDescription" class="form-control" > </textarea>
                     <span asp-validation-for="ProductDescription" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="ProductCategoryId" class="control-label"></label>
-                    <input asp-for="ProductCategoryId" class="form-control" />
+                    <select asp-for="ProductCategoryId" class="form-control">
+                        <option value="1">Antivirus & Protection</option>
+                        <option value="2">Audio & Video</option>
+                        <option value="3">CD & DVD & Blu-ray</option>
+                        <option value="4">Design & CAD</option>
+						<option value="5">Developer Tools</option>
+                        <option value="6">Graphics & Design</option>
+                        <option value="7">Music Production</option>
+                        <option value="8">Navigation & Maps</option>
+                        <option value="9">Networking Software</option>
+                        <option value="10">Office Business</option>
+                        <option value="11">Operating Systems</option>
+						<option value="12">Security</option>
+                        <option value="13">Software Development</option>
+                        <option value="14">System Maintenance</option>
+                        <option value="15">Video & Audio</option>
+                        <option value="16">Video Tutorials</option>
+                        <option value="17">Web Development</option>
+                        <option value="18">Other</option>
+                    </select>
                     <span asp-validation-for="ProductCategoryId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
