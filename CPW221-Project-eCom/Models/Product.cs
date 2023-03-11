@@ -20,7 +20,7 @@ namespace CPW221_Project_eCom.Models
         [Required]
         [StringLength(60,
             ErrorMessage = "Title has a limit of 60 characters")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// MSRP for the product
@@ -48,11 +48,11 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// collection of productCategory
         /// </summary>
-        public ProductCategory _productCategory { get; set; }
+        public ProductCategory? _productCategory { get; set; }
 
         /// <summary>
         /// makes the InvoicedItems class into a object
         /// </summary>
-        public ICollection<InvoicedItems> _invoicedItems { get; set; }
+        public ICollection<InvoicedItems>? _invoicedItems { get; set; }
     }
 }

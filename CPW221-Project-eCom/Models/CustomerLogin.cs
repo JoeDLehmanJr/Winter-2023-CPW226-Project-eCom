@@ -21,7 +21,7 @@ namespace CPW221_Project_eCom.Models
         [StringLength(60, MinimumLength = 6,
             ErrorMessage = "UserName must have min length of 6 and max Length of 60")]
         [Required]
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         //PLACEHOLDER
         /// <summary>
@@ -32,7 +32,7 @@ namespace CPW221_Project_eCom.Models
             ErrorMessage = "Password must have min length of 6 and max Length of 18")]
         [DataType(DataType.Password)]
         [Required]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         /// <summary>
         /// pointer to link the customer table to this one
@@ -42,7 +42,7 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// collection of customers
         /// </summary>
-        public Customer _customer { get; set; }
+        public Customer? _customer { get; set; }
     }
     public class LoginViewModel
     {
