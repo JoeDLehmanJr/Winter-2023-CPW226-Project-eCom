@@ -31,7 +31,7 @@ namespace CPW221_Project_eCom.Models
         /// The description for the status of the order
         ///  NOT NULL
         /// </summary>
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         //PLACEHOLDER
         /// <summary>
@@ -68,7 +68,7 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// collection of invoice items
         /// </summary>
-        public InvoicedItems _InvoicedItems { get; set; }
+        public ICollection<InvoicedItems>? _InvoicedItems { get; set; }
 
     }
 }

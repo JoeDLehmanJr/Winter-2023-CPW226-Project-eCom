@@ -29,9 +29,9 @@ namespace CPW221_Project_eCom.Models
         public int Quantity { get; set; }
 
         /// <summary>
-        /// makes the customerLogin class into a object
+        /// Points back to invoice
         /// </summary>
-        public ICollection<Invoices> _invoices { get; set; }
+        public Invoices? _invoices { get; set; }
 
         /// <summary>
         /// pointer to link the Product table to this one
