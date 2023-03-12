@@ -7,13 +7,17 @@ namespace CPW221_Project_eCom.Controllers
     public class InoviceItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        public InoviceItemsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -45,12 +49,12 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            InvoicedItems invoicedItemsToDelete = await _context.InvoicedItems.FindAsync(id);
+            InvoicedItems? invoicedItemsToDelete = await _context.InvoicedItems.FindAsync(id);
 
             if(invoicedItemsToDelete == null)
             {
                 await _context.SaveChangesAsync(); ;
-                TempData["Message"] = invoicedItemsToDelete.ProductId + " was deleted successfully";
+                TempData["Message"] = $"{invoicedItemsToDelete.ProductId} was deleted successfully";
                 return RedirectToAction("Index");
             }
 
@@ -60,7 +64,7 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            InvoicedItems invoicedItemsDetails = await _context.InvoicedItems.FindAsync(id);
+            InvoicedItems? invoicedItemsDetails = await _context.InvoicedItems.FindAsync(id);
 
             if (invoicedItemsDetails == null)
             {

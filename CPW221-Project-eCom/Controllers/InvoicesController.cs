@@ -7,6 +7,10 @@ namespace CPW221_Project_eCom.Controllers
     public class InvoicesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        public InvoicesController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -14,7 +18,7 @@ namespace CPW221_Project_eCom.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
@@ -47,7 +51,7 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            Invoices invoicesToDelete = await _context.Invoices.FindAsync(id);
+            Invoices? invoicesToDelete = await _context.Invoices.FindAsync(id);
 
             if(invoicesToDelete == null)
             {
@@ -62,7 +66,7 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            Invoices invoicesDetails = await _context.Invoices.FindAsync(id);
+            Invoices? invoicesDetails = await _context.Invoices.FindAsync(id);
 
             if(invoicesDetails == null)
             {
