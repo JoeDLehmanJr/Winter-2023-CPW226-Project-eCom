@@ -28,6 +28,6 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// makes the customerLogin class into a object
         /// </summary>
-        public ICollection<Product> _product { get; set; }
+        public ICollection<Product>? _product { get; set; }
     }
 }
