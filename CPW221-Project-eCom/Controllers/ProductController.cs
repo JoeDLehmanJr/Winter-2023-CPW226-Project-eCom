@@ -59,7 +59,7 @@ namespace CPW221_Project_eCom.Controllers
                 TempData["Message"] = $"{product.Title} was added successfully";
                 return View();
             }
-            return View(product);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -87,7 +87,7 @@ namespace CPW221_Project_eCom.Controllers
         
         public async Task<IActionResult> Delete(int id)
         {
-            Product productToDelete = await _context.Product.FindAsync(id);
+            Product? productToDelete = await _context.Product.FindAsync(id);
 
             if (productToDelete == null)
             {
@@ -99,7 +99,7 @@ namespace CPW221_Project_eCom.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            Product productToDelete = await _context.Product.FindAsync(id);
+            Product? productToDelete = await _context.Product.FindAsync(id);
 
             if(productToDelete != null)
             {
@@ -115,7 +115,7 @@ namespace CPW221_Project_eCom.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            Product productDetails = await _context.Product.FindAsync(id);
+            Product? productDetails = await _context.Product.FindAsync(id);
 
             if (productDetails == null)
             {
