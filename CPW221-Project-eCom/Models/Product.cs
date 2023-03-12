@@ -37,7 +37,7 @@ namespace CPW221_Project_eCom.Models
         [Required]
         [StringLength(255,
             ErrorMessage = "Description has a limit of 255 characters")]
-        public string ProductDescription { get; set; }
+        public string? ProductDescription { get; set; }
 
         /// <summary>
         /// Category for the product. Foreign Key. Connects to ProductCategory
