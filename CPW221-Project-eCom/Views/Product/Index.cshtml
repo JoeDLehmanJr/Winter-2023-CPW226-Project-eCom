@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProductIdProduct)
+                @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RetailPrice)
@@ -31,7 +31,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductIdProduct)
+				@Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RetailPrice)
@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.ProductCategoryId)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ProductIdProduct}) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.ProductIdProduct  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.ProductIdProduct  })
             </td>
         </tr>
 }
