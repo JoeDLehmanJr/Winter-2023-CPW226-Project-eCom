@@ -41,6 +41,6 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// collection of product
         /// </summary>
-        public Product _product { get; set; }
+        public Product? _product { get; set; }
     }
 }

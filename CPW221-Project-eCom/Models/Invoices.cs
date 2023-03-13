@@ -58,7 +58,7 @@ namespace CPW221_Project_eCom.Models
         /// <summary>
         /// makes the customer class into a object
         /// </summary>
-        public ICollection<Customer> _Customer { get; set; }
+        public ICollection<Customer>? _Customer { get; set; }
 
         /// <summary>
         /// pointer to link the invoices items table to this one
