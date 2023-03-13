@@ -22,7 +22,7 @@ namespace CPW221_Project_eCom.Controllers
         // GET: ProductCategories
         public async Task<IActionResult> Index()
         {
-              return View(await _context.ProductCategory.ToListAsync());
+            return View(await _context.ProductCategory.ToListAsync());
         }
 
         // GET: ProductCategories/Details/5
