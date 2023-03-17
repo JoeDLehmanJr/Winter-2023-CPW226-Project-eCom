@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Account Settings</h1>
+
+    <div class="row">
+
+        <!-- Account Information -->
+        <div class="col-lg-6">
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Account Information</h6>
+                </div>
+                <div class="card-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="inputUsername">Username</label>
+                            <input type="text" class="form-control" id="inputUsername" value="johndoe" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" value="johndoe@example.com">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Account Information</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modify Password -->
+        <div class="col-lg-6">
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Change Password</h6>
+                </div>
+                <div class="card-body">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="inputCurrentPassword">Current Password</label>
+                            <input type="password" class="form-control" id="inputCurrentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNewPassword">New Password</label>
+                            <input type="password" class="form-control" id="inputNewPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputConfirmPassword">Confirm New Password</label>
+                            <input type="password" class="form-control" id="inputConfirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
